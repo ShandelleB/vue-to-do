@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<li v-for="( product, productIndex ) inproducts" v-bind:class="{'is-active': product.isActive }">
+				{{ product.title }}
+				<span v-if="produce.isActive">Active Product</span>
+				<span v-else>Inactive Product</span>
+			</li>
+		</div>
+
+		<script src="https://unpkg.com/vue@2.2.6"></script>
+		<script>
+
+			var vm = new Vue ({
+				el: '#app',
+				data: {
+					products: [
+						{
+							title: 'Product 1',
+							price: 123,
+							isActive: true
+						},
+						{
+							title: 'Product 2',
+							price: 456,
+							isActive: false
+						}
+					]
+				},
+				computed: 
+			});
+		</script>
+	</body>
+</html>
+
+
+
+<!-- If using Jquery, you have to wait until it is 'mounted'.
+	 Using internal methods put $ first.
+	 $.holdReady() - Holds until you pass false.
+	 v-bind and / work the same
+	 .trim and .lazy are called modifiers
+
+
+	-->
